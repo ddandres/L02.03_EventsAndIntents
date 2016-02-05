@@ -1,0 +1,26 @@
+<!--
+  ~ Copyright (c) 2016. David de Andrés and Juan Carlos Ruiz, DISCA - UPV, Development of apps for mobile devices.
+  -->
+
+<resources>
+    <string name="app_name">L02.03_EventsAndIntents</string>
+    <!--Text to show in MainActivity's buttons-->
+    <string name="button_notification">Notify user</string>
+    <string name="button_explicit_intent">Launch new activity</string>
+    <string name="button_explicit_intent_with_parameter">Launch new activity with parameter</string>
+    <string name="button_explicit_intent_for_result">Launch new activity and expect a result</string>
+    <string name="button_implicit_intent_system_chooses">Browse UPV\'s website</string>
+    <string name="button_implicit_intent_user_chooses">User chooses the web browser application</string>
+    <!--Message to display in the notification-->
+    <string name="notification_message">Button clicked!</string>
+    <!--Text to display in the ExplicitIntentActivity-->
+    <string name="explicit_intent_message">This is the ExplicitIntentActivity</string>
+    <!--Text to display in the ForResultActivity-->
+    <string name="for_result_message">This is activity will return a message</string>
+    <!--Text to display when no activity is found to handle an Intent-->
+    <string name="error_message">No activity can handle the specified Intent</string>
+    <!--Text to display when displaying a chooser for several applications-->
+    <string name="chooser_message">Please, select the application to handle your Intent</string>
+    <!--Text to display in the ImplicitIntentActivity-->
+    <string name="implicit_intent_message">This is the ImplicitIntentActivity</string>
+</resources>

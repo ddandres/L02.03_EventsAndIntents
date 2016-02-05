@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2016. David de Andrés and Juan Carlos Ruiz, DISCA - UPV, Development of apps for mobile devices.
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="labs.sdm.l0203_eventsandintents.MainActivity">
+
+    <!--onClickListener association by code -->
+    <Button
+        android:id="@+id/bShowNotification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_notification" />
+
+    <!--
+        onClickListener association by the onClick attribute
+        The following three components share the same onClickListener
+    -->
+    <Button
+        android:id="@+id/bExplicitIntent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="launchNewActivity"
+        android:text="@string/button_explicit_intent" />
+
+    <Button
+        android:id="@+id/bExplicitIntentWithParameter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="launchNewActivity"
+        android:text="@string/button_explicit_intent_with_parameter" />
+
+    <Button
+        android:id="@+id/bExplicitIntentForResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="launchNewActivity"
+        android:text="@string/button_explicit_intent_for_result" />
+
+    <!--
+        onClickListener association by the onClick attribute
+        The following two components share the same onClickListener
+    -->
+    <Button
+        android:id="@+id/bImplicitIntentSystemChooses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="browseWebsite"
+        android:text="@string/button_implicit_intent_system_chooses" />
+
+    <Button
+        android:id="@+id/bImplicitIntentUserChooses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="browseWebsite"
+        android:text="@string/button_implicit_intent_user_chooses" />
+
+</LinearLayout>
