@@ -71,11 +71,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-/*
+    /*
         All the activities launched for result will trigger this method,
         so we need to check what we asked the activities to do, to know
         which result we are getting
-*/
+    */
         if (requestCode == GET_MESSAGE) {
             // We can also check the result code provided by the returning activity
             if (resultCode == RESULT_OK) {
