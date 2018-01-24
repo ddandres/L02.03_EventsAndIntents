@@ -20,7 +20,7 @@ public class ExplicitIntentActivity extends AppCompatActivity {
         // If null then there was no such parameter
         if (message != null) {
             // Otherwise display this message on the TextView
-            TextView tv = (TextView) findViewById(R.id.tvExplicitIntent);
+            TextView tv = findViewById(R.id.tvExplicitIntent);
             tv.setText(message);
         }
     }

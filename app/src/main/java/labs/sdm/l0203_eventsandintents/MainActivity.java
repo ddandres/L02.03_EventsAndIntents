@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // onClickListener association by code
-        Button notificationButton = (Button) findViewById(R.id.bShowNotification);
+        Button notificationButton = findViewById(R.id.bShowNotification);
         notificationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

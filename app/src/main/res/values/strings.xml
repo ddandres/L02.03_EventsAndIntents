@@ -16,7 +16,7 @@
     <!--Text to display in the ExplicitIntentActivity-->
     <string name="explicit_intent_message">This is the ExplicitIntentActivity</string>
     <!--Text to display in the ForResultActivity-->
-    <string name="for_result_message">This is activity will return a message</string>
+    <string name="for_result_message">This activity will return a message</string>
     <!--Text to display when no activity is found to handle an Intent-->
     <string name="error_message">No activity can handle the specified Intent</string>
     <!--Text to display when displaying a chooser for several applications-->
