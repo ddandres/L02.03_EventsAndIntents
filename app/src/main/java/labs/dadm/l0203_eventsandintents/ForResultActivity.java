@@ -2,11 +2,11 @@
  * Copyright (c) 2016. David de Andrés and Juan Carlos Ruiz, DISCA - UPV, Development of apps for mobile devices.
  */
 
-package labs.sdm.l0203_eventsandintents;
+package labs.dadm.l0203_eventsandintents;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 public class ForResultActivity extends AppCompatActivity {
 
