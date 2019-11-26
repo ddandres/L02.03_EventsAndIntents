@@ -3,9 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/L02.03_EventsAndIntents.iml" filepath="$PROJECT_DIR$/L02.03_EventsAndIntents.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../../../SDM/Test/L02.03_EventsAndIntents/L02.03_EventsAndIntents.iml" filepath="$PROJECT_DIR$/../../../../SDM/Test/L02.03_EventsAndIntents/L02.03_EventsAndIntents.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../../../../SDM/Test/L02.03_EventsAndIntents/app/app.iml" filepath="$PROJECT_DIR$/../../../../SDM/Test/L02.03_EventsAndIntents/app/app.iml" />
     </modules>
   </component>
 </project>

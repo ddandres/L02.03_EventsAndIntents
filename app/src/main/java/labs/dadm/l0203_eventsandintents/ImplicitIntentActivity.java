@@ -5,7 +5,7 @@
 package labs.dadm.l0203_eventsandintents;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class ImplicitIntentActivity extends AppCompatActivity {
 
