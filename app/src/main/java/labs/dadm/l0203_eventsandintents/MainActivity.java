@@ -5,12 +5,17 @@
 package labs.dadm.l0203_eventsandintents;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -24,12 +29,9 @@ public class MainActivity extends AppCompatActivity {
 
         // onClickListener association by code
         Button notificationButton = findViewById(R.id.bShowNotification);
-        notificationButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Displays a quick little message in a popup
-                Toast.makeText(MainActivity.this, R.string.notification_message, Toast.LENGTH_SHORT).show();
-            }
+        notificationButton.setOnClickListener(v -> {
+            // Displays a quick little message in a popup
+            Toast.makeText(MainActivity.this, R.string.notification_message, Toast.LENGTH_SHORT).show();
         });
     }
 
@@ -42,27 +44,24 @@ public class MainActivity extends AppCompatActivity {
         Intent intent;
 
         // Determine what to do depending on the Button clicked
-        switch (v.getId()) {
+        final int buttonClicked = v.getId();
+        if (buttonClicked == R.id.bExplicitIntent) {
             // Nothing special, just launch the new activity
-            case R.id.bExplicitIntent:
-                // Explicit Intent to launch the ExplicitIntentActivity
-                intent = new Intent(MainActivity.this, ExplicitIntentActivity.class);
-                startActivity(intent);
-                break;
+            // Explicit Intent to launch the ExplicitIntentActivity
+            intent = new Intent(MainActivity.this, ExplicitIntentActivity.class);
+            startActivity(intent);
+        } else if (buttonClicked == R.id.bExplicitIntentWithParameter) {
             // Pass a parameter within the Intent
-            case R.id.bExplicitIntentWithParameter:
-                // Explicit Intent to launch the ExplicitIntentActivity
-                intent = new Intent(MainActivity.this, ExplicitIntentActivity.class);
-                // Include the value of a String called "message" as parameter
-                intent.putExtra("message", "Hello this is David!");
-                startActivity(intent);
-                break;
+            // Explicit Intent to launch the ExplicitIntentActivity
+            intent = new Intent(MainActivity.this, ExplicitIntentActivity.class);
+            // Include the value of a String called "message" as parameter
+            intent.putExtra("message", "Hello this is David!");
+            startActivity(intent);
+        } else if (buttonClicked == R.id.bExplicitIntentForResult) {
             // Launch the new activity and wait for a result
-            case R.id.bExplicitIntentForResult:
-                // Explicit Intent to launch the ForResultActivity
-                intent = new Intent(MainActivity.this, ForResultActivity.class);
-                startActivityForResult(intent, GET_MESSAGE);
-                break;
+            // Explicit Intent to launch the ForResultActivity
+            intent = new Intent(MainActivity.this, ForResultActivity.class);
+            startActivityForResult(intent, GET_MESSAGE);
         }
     }
 
@@ -93,36 +92,40 @@ public class MainActivity extends AppCompatActivity {
         // Intent to access the UPV's website
         Intent intent = new Intent();
         intent.setAction(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse("http://www.upv.es"));
+        intent.setData(Uri.parse("https://www.upv.es"));
 
         // Determine what to do depending on the Button clicked
-        switch (v.getId()) {
+        final int buttonClicked = v.getId();
+        if (buttonClicked == R.id.bImplicitIntentSystemChooses) {
             // Let the system choose the application to launch
-            case R.id.bImplicitIntentSystemChooses:
-                // Check that there exists an activity that can receive this Intent
-                if (intent.resolveActivity(getPackageManager()) != null) {
-                    startActivity(intent);
-                }
-                // If not, then show an error message to the user
-                else {
-                    Toast.makeText(MainActivity.this, R.string.error_message, Toast.LENGTH_SHORT).show();
-                }
-                break;
-            case R.id.bImplicitIntentUserChooses:
-                // Create a chooser for the user to select the application to handle the Intent
-                Intent chooser = Intent.createChooser(intent, getResources().getString(R.string.chooser_message));
+            // Check that there exists an activity that can receive this Intent
+            if (isIntentSafe(intent)) {
+                startActivity(intent);
+            }
+            // If not, then show an error message to the user
+            else {
+                Toast.makeText(MainActivity.this, R.string.error_message, Toast.LENGTH_SHORT).show();
+            }
+        } else if (buttonClicked == R.id.bImplicitIntentUserChooses) {
+            // Create a chooser for the user to select the application to handle the Intent
+            Intent chooser = Intent.createChooser(intent, getResources().getString(R.string.chooser_message));
 
-                // Check that there exists an activity that can receive this Intent
-                if (intent.resolveActivity(getPackageManager()) != null) {
-                    startActivity(chooser);
-                }
-                // If not, then show an error message to the user
-                else {
-                    Toast.makeText(MainActivity.this, R.string.error_message, Toast.LENGTH_SHORT).show();
-                }
-                break;
+            // Check that there exists an activity that can receive this Intent
+            if (isIntentSafe(intent)) {
+                startActivity(chooser);
+            }
+            // If not, then show an error message to the user
+            else {
+                Toast.makeText(MainActivity.this, R.string.error_message, Toast.LENGTH_SHORT).show();
+            }
         }
+    }
 
+    // Checks that there is an activity that can handle this intent
+    private boolean isIntentSafe(Intent intent) {
+        List<ResolveInfo> activities = getPackageManager().
+                queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
+        return (activities.size() > 0);
     }
 
 }
