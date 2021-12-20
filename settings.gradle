@@ -5,5 +5,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
-rootProject.name = "ForResult"
+rootProject.name = "L02.03_EventsAndIntents"
 include ':app'
