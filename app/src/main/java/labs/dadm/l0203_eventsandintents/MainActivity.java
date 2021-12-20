@@ -9,6 +9,7 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
@@ -35,18 +36,20 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, R.string.notification_message, Toast.LENGTH_SHORT).show();
         });
 
-        findViewById(R.id.bExplicitIntent).setOnClickListener(v -> launchNewActivity(v.getId()));
-        findViewById(R.id.bExplicitIntentWithParameter).setOnClickListener(
-                v -> launchNewActivity(v.getId()));
-        findViewById(R.id.bExplicitIntentForResultDeprecated).setOnClickListener(
-                v -> launchNewActivity(v.getId()));
-        findViewById(R.id.bExplicitIntentForResult).setOnClickListener(
-                v -> launchNewActivity(v.getId()));
+        // All Buttons for explicit Intents share the same OnClickListener
+        final View.OnClickListener explicitIntentListener = v -> launchNewActivity(v.getId());
 
-        findViewById(R.id.bImplicitIntentSystemChooses).setOnClickListener(
-                v -> navigateToEtsinfLocation(v.getId()));
-        findViewById(R.id.bImplicitIntentUserChooses).setOnClickListener(
-                v -> navigateToEtsinfLocation(v.getId()));
+        findViewById(R.id.bExplicitIntent).setOnClickListener(explicitIntentListener);
+        findViewById(R.id.bExplicitIntentWithParameter).setOnClickListener(explicitIntentListener);
+        findViewById(R.id.bExplicitIntentForResultDeprecated)
+                .setOnClickListener(explicitIntentListener);
+        findViewById(R.id.bExplicitIntentForResult).setOnClickListener(explicitIntentListener);
+
+        // All Buttons for implicit Intents share the same OnClickListener
+        final View.OnClickListener implicitIntentListener = v -> navigateToEtsinfLocation(v.getId());
+
+        findViewById(R.id.bImplicitIntentSystemChooses).setOnClickListener(implicitIntentListener);
+        findViewById(R.id.bImplicitIntentUserChooses).setOnClickListener(implicitIntentListener);
 
         launcher = registerForActivityResult(
                 new ActivityResultContracts.StartActivityForResult(),
