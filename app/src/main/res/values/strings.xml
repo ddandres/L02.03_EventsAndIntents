@@ -8,11 +8,16 @@
     <string name="button_notification">Notify user</string>
     <string name="button_explicit_intent">Launch new activity</string>
     <string name="button_explicit_intent_with_parameter">Launch new activity with parameter</string>
-    <string name="button_explicit_intent_for_result">Launch new activity and expect a result</string>
-    <string name="button_implicit_intent_system_chooses">Browse UPV\'s website</string>
-    <string name="button_implicit_intent_user_chooses">User chooses the web browser application</string>
+    <string name="button_explicit_intent_for_result_deprecated">
+        Launch new activity and expect a result (DEPRECATED)</string>
+    <string name="button_explicit_intent_for_result">
+        Launch new activity and expect a result (androidx.activity)</string>
+    <string name="button_implicit_intent_system_chooses">Navigate to ETSINF\'s location</string>
+    <string name="button_implicit_intent_user_chooses">
+        User chooses the navigation application</string>
     <!--Message to display in the notification-->
     <string name="notification_message">Button clicked!</string>
+    <string name="no_message">No message returned!</string>
     <!--Text to display in the ExplicitIntentActivity-->
     <string name="explicit_intent_message">This is the ExplicitIntentActivity</string>
     <!--Text to display in the ForResultActivity-->

@@ -11,67 +11,78 @@
     tools:context="labs.dadm.l0203_eventsandintents.MainActivity">
 
     <!--onClickListener association by code -->
-    <Button
-        android:id="@+id/bShowNotification"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/button_notification"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <!--
         onClickListener association by the onClick attribute
         The following three components share the same onClickListener
     -->
-    <Button
-        android:id="@+id/bExplicitIntent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="launchNewActivity"
-        android:text="@string/button_explicit_intent"
-        app:layout_constraintStart_toStartOf="@+id/bShowNotification"
-        app:layout_constraintTop_toBottomOf="@+id/bShowNotification" />
-
-    <Button
-        android:id="@+id/bExplicitIntentWithParameter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="launchNewActivity"
-        android:text="@string/button_explicit_intent_with_parameter"
-        app:layout_constraintStart_toStartOf="@+id/bShowNotification"
-        app:layout_constraintTop_toBottomOf="@+id/bExplicitIntent" />
-
-    <Button
-        android:id="@+id/bExplicitIntentForResult"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="launchNewActivity"
-        android:text="@string/button_explicit_intent_for_result"
-        app:layout_constraintStart_toStartOf="@+id/bShowNotification"
-        app:layout_constraintTop_toBottomOf="@+id/bExplicitIntentWithParameter" />
 
     <!--
         onClickListener association by the onClick attribute
         The following two components share the same onClickListener
     -->
+
+    <Button
+        android:id="@+id/bShowNotification"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/button_notification"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/bImplicitIntentSystemChooses"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:onClick="browseWebsite"
         android:text="@string/button_implicit_intent_system_chooses"
-        app:layout_constraintStart_toStartOf="@+id/bShowNotification"
-        app:layout_constraintTop_toBottomOf="@+id/bExplicitIntentForResult" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bShowNotification" />
+
+    <Button
+        android:id="@+id/bExplicitIntent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/button_explicit_intent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bImplicitIntentSystemChooses" />
+
+    <Button
+        android:id="@+id/bExplicitIntentWithParameter"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/button_explicit_intent_with_parameter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bExplicitIntent" />
+
+    <Button
+        android:id="@+id/bExplicitIntentForResultDeprecated"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/button_explicit_intent_for_result_deprecated"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bExplicitIntentWithParameter" />
+
+    <Button
+        android:id="@+id/bExplicitIntentForResult"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/button_explicit_intent_for_result"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bExplicitIntentForResultDeprecated" />
 
     <Button
         android:id="@+id/bImplicitIntentUserChooses"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:onClick="browseWebsite"
         android:text="@string/button_implicit_intent_user_chooses"
-        app:layout_constraintStart_toStartOf="@+id/bShowNotification"
-        app:layout_constraintTop_toBottomOf="@+id/bImplicitIntentSystemChooses" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bExplicitIntentForResult" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

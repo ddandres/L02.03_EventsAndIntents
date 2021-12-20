@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/L02.03_EventsAndIntents.iml" filepath="$PROJECT_DIR$/.idea/modules/L02.03_EventsAndIntents.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/L02.03_EventsAndIntents.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/L02.03_EventsAndIntents.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ForResult.iml" filepath="$PROJECT_DIR$/.idea/modules/ForResult.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/ForResult.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/ForResult.app.iml" />
     </modules>
   </component>
 </project>
