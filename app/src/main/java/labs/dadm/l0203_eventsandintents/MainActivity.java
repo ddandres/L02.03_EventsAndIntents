@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // This method manages explicit Intents
-    public void launchNewActivity(int buttonClicked) {
+    private void launchNewActivity(int buttonClicked) {
 
         final Intent intent;
 
@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     // This method manages implicit Intents
-    public void navigateToEtsinfLocation(int buttonClicked) {
+    private void navigateToEtsinfLocation(int buttonClicked) {
 
         // Intent to navigate to ETSINF's location
         final Intent intent = new Intent();
